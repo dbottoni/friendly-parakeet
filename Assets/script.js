@@ -1,7 +1,7 @@
 // Assignment code here
-var btn = document.getElementById('generate')
-// insert id = password. word isn't insert though
-var password = document.getElementById('password')
+var btn = document.getElementById('generate');
+// insert id = newPassword. word isn't insert though
+//var newPassword = document.getElementById('password');
 var length;
 var lower;
 var upper;
@@ -29,25 +29,23 @@ if (upper === true){
 }
 
 if (numeric === true){
-  charset += "1234567890";
+  charset += "0123456789";
 }
 
 if (special === true) {
-  charset += "$^~*:?`";
+  charset += "${^~*:?(`";
 }
 
  for (var i = 0, n = charset.length; i < length; ++i) {
   retVal += charset.charAt(Math.floor(Math.random() * n));
     }
 
-console.log(retVal)
+  // is this document.getElementbyId best practice? Or should I declare a variable like on line 4
+  document.getElementById("password").innerHTML= retVal;
+  
+    //console.log(retVal)
 
 } 
-
-
-
-
-
 
 
 
