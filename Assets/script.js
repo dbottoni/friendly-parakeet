@@ -13,12 +13,23 @@ btn.onclick = function(writePassword)
 { 
 // line 13 clears previous retVal onClick
 var retVal= "";
-  length = prompt("How many characters do you want in your password?");
+length = 0;
+  // length = prompt("How many characters do you want in your password?");
+  while (length < 8 || length > 128){
+    length = prompt("How many characters do you want in your password?");
+      if (length < 8 || length > 128){
+     alert("Password must have between 8 and 128 characters");
+   }
+  }
+
+    
+
   lower = confirm("Would you like to use lower case letters?");
   upper = confirm("Would you like to use upper case letters?");
   numeric = confirm("Would you like to use numbers?");
   special = confirm("Would you like to use special characters?");
 
+  
 
   // '=== true' is assumed if excluded in this case. intuitively looks for true in this instance
   if (lower === true) {
