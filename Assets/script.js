@@ -19,8 +19,9 @@ var retVal= "";
   numeric = confirm("Would you like to use numbers?");
   special = confirm("Would you like to use special characters?");
 
+
   // '=== true' is assumed if excluded in this case. intuitively looks for true in this instance
-if (lower === true) {
+  if (lower === true) {
   charset += "abcdefghijklmnopqrstuvwxyz";
 } 
 
@@ -36,21 +37,22 @@ if (special === true) {
   charset += "${^~*:?(`";
 }
 
- for (var i = 0, n = charset.length; i < length; ++i) {
+ for (var i = 0, n = charset.length; i < length; i++) {
   retVal += charset.charAt(Math.floor(Math.random() * n));
     }
 
   // is this document.getElementbyId best practice? Or should I declare a variable like on line 4
   document.getElementById("password").innerHTML= retVal;
   
-    //console.log(retVal)
+    console.log(retVal)
 
 } 
 
-
+// window.alert
+// password array
 
 // Get references to the #generate element
-//var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
@@ -60,6 +62,8 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
+
 
 // Add event listener to generate button
 //generateBtn.addEventListener("click", writePassword);
