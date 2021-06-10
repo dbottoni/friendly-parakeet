@@ -29,12 +29,10 @@ length = 0;
   numeric = confirm("Would you like to use numbers?");
   special = confirm("Would you like to use special characters?");
 
-  while (!lower && !upper && !numeric && !special){
-    alert ("You must select at least one character");
+  if (!lower && !upper && !numeric && !special){
+    alert ("You must select at least one character type");
   }   
   
-  // stuck at this spot. Want page to reload af
-
 
   // '=== true' is assumed if excluded in this case. intuitively looks for true in this instance
   if (lower === true) {
