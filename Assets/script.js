@@ -22,21 +22,26 @@ length = 0;
    }
   }
 
-    
-
+ 
+  
   lower = confirm("Would you like to use lower case letters?");
   upper = confirm("Would you like to use upper case letters?");
   numeric = confirm("Would you like to use numbers?");
   special = confirm("Would you like to use special characters?");
 
+  while (!lower && !upper && !numeric && !special){
+    alert ("You must select at least one character");
+  }   
   
+  // stuck at this spot. Want page to reload af
+
 
   // '=== true' is assumed if excluded in this case. intuitively looks for true in this instance
   if (lower === true) {
   charset += "abcdefghijklmnopqrstuvwxyz";
-} 
+}
 
-if (upper === true){
+if  (upper === true){
   charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 }
 
@@ -47,6 +52,7 @@ if (numeric === true){
 if (special === true) {
   charset += "${^~*:?(`";
 }
+ 
 
  for (var i = 0, n = charset.length; i < length; i++) {
   retVal += charset.charAt(Math.floor(Math.random() * n));
